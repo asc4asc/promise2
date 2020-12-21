@@ -25,7 +25,7 @@ test me please: <p id="demo"></p>
 <script>
 "use strict";
 
-let myPromise = new Promise(function(myResolve, myReject) {
+let myPromise = new Promise(function(myResolve) {
   setTimeout(function(){ myResolve("I love You !!"); }, 3000);
 });
 myPromise.then(function(value) {
