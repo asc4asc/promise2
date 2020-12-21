@@ -25,6 +25,10 @@ test me please: <p id="demo"></p>
 <script>
 "use strict";
 
+myPromise1 = function() {
+  this.s="";
+};
+    
 let myPromise = new Promise(function(myResolve) {
   setTimeout(function(){ myResolve("I love You !!"); }, 3000);
 });
@@ -37,7 +41,7 @@ myPromise.then(function(value) {
    doit(value);  
 });    
 
-myPromise.prototype.doit = function() {
+myPromise1.prototype.doit = function() {
   for (this.i=0; this.i<10; this.i++) { 
     this.s = "Hello JavaS"+this.i+"<br>"+this.s; 
     document.getElementById("demo").innerHTML = this.s;
