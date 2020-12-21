@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+    <html lang="en">
+    	<head>
+    		<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1"/>
+    	    <title>Javascript test</title>
+<style>
+@media only screen and (max-width: 600px) {
+   body { background-color: lightblue; }   
+   IfSmallNotNeed { display: none !important; } 
+   IfSmallDoBreak{ 
+       display: block !important; 
+       margin: 1em;
+    }
+} 
+</style>
+
+</head>
+<body>
+    
+<center>    
+test me please: <p id="demo"></p>
+<h2>JavaScript Promise</h2>
+<p>Wait 3 seconds (3000 milliseconds) for this page to change.</p>
+<p id="demo1"></p>
+<script>
+"use strict";
+
+let myPromise = new Promise(function(myResolve, myReject) {
+  setTimeout(function(){ myResolve("I love You !!"); }, 3000);
+});
+myPromise.then(function(value) {
+  document.getElementById("demo1").innerHTML = value;
+});   
+myPromise.then(function(value) {
+   doit(value);  
+});    
+
+function doit(s) {
+  let temp=s;
+  for (let i=0; i < 10; i++) {  
+    s = "Hello JavaS"+i+"<br>"+s; 
+    document.getElementById("demo").innerHTML = s;
+    console.log("Hello JavaScript!",i,"\n");
+  }
+  s=temp+"<br>"+s;  
+  document.getElementById("demo").innerHTML = s;    
+}
+</script> 
+    
+</body>
+</html>
