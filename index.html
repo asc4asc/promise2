@@ -28,11 +28,20 @@ test me please: <p id="demo"></p>
 let myPromise = new Promise(function(myResolve) {
   setTimeout(function(){ myResolve("I love You !!"); }, 3000);
 });
+    
 myPromise.then(function(value) {
   document.getElementById("demo1").innerHTML = value;
 }).then(function(value) {
    doit(value);  
 });    
+
+myPromise.prototype.doit = function() {
+  for (this.i=0; this.i<10; this.i++) { 
+    this.s = "Hello JavaS"+this.i+"<br>"+this.s; 
+    document.getElementById("demo").innerHTML = this.s;
+    console.log("Hello JavaScript!",this.i,"\n");
+  }
+};    
 
 function doit(s) {
   let temp=s;
@@ -44,6 +53,7 @@ function doit(s) {
   s=temp+"<br>"+s;  
   document.getElementById("demo").innerHTML = s;    
 }
+        
 </script> 
     
 </body>
