@@ -31,7 +31,9 @@ let myPromise = new Promise(function(myResolve) {
     
 myPromise.then(function(value) {
   document.getElementById("demo1").innerHTML = value;
-}).then(function(value) {
+});
+    
+myPromise.then(function(value) {
    doit(value);  
 });    
 
